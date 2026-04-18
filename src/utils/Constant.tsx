@@ -5,11 +5,10 @@ export const ROUTES = {
   admin: {
     signIn: '/auth/signin',
     resetPassword: '/auth/resetpassword',
-    dashboard: 'dashboard/home',
   },
 
   home: '/',
-  publicPaths: ['/sign-in', '/forgot-password', '/reset-password'],
+  publicPaths: ['/sign-in', '/sign-up', '/forgot-password', '/reset-password'],
 };
 
 export const handleKeyDown: KeyboardEventHandler<HTMLInputElement> = (e) => {
@@ -57,7 +56,7 @@ export const adminSideBarData = [
 ];
 
 export enum Role {
-  Employee = 'EMPLOYEE',
+  User = 'USER',
   Admin = 'ADMIN',
 }
 

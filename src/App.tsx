@@ -16,6 +16,7 @@ import { setUser } from './redux/slices/userSlice';
 import { routes } from './Routes';
 import { Role, ROUTES } from './utils/Constant';
 import { isEmpty } from './utils/helper';
+import SignUp from './pages/AuthPages/SignUp';
 const token = Cookies.get('token') || '';
 
 export default function App() {
@@ -73,6 +74,7 @@ export default function App() {
 
       <Routes>
         <Route path="/sign-in" element={<SignIn />} />
+        <Route path="/sign-up" element={<SignUp />} />
         <Route path="/forgot-password" element={<ForgotPassword />} />
         <Route path="/reset-password" element={<ResetPassword />} />
         <Route element={<AppLayout />}>
@@ -93,7 +95,7 @@ export default function App() {
           <Route
             path="/"
             element={
-              <ProtectedRoute allowedRoles={[Role.Admin, Role.Employee]}>
+              <ProtectedRoute allowedRoles={[Role.Admin, Role.User]}>
                 <Navigate to="/dashboard" replace />
               </ProtectedRoute>
             }

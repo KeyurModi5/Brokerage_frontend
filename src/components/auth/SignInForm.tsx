@@ -43,9 +43,8 @@ export default function SignInForm() {
       dispatch(setIsLoading(true));
       const { data, status } = await apiHandler.authHandler.signIn(user);
       if (status === 200 || status === 201) {
-        const userData = data?.data?.data;
-        const token = data?.data?.token;
-
+        const userData = data?.data?.user;
+        const token = data?.data?.accessToken;
         dispatch(setUser(userData));
         Cookies.set('token', token);
 

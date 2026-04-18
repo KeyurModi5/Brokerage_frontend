@@ -22,7 +22,7 @@ const ProtectedRoute: React.FC<ProtectedRouteProps> = ({
   }
 
   // ✅ Redirect if role not allowed
-  if (allowedRoles && !allowedRoles.includes(userData?.user_type)) {
+  if (allowedRoles && !allowedRoles.includes(userData?.role)) {
     return <Navigate to={redirectPath} replace />;
   }
 

@@ -2,8 +2,11 @@ import { AxiosRequestConfig } from 'axios';
 import apiClient from './apiClient';
 
 const authHandler = {
+  register: (payload?: any, options?: AxiosRequestConfig<any>) => {
+    return apiClient.post('/auth/register', payload, options);
+  },
   signIn: (payload?: any, options?: AxiosRequestConfig<any>) => {
-    return apiClient.post('/auth/sign-in', payload, options);
+    return apiClient.post('/auth/login', payload, options);
   },
   viewProfile: (options?: AxiosRequestConfig<any>) => {
     return apiClient.get('/auth/view-profile', options);
